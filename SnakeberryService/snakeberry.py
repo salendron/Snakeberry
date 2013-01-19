@@ -1,27 +1,31 @@
-import web
-from json import JSONEncoder
+import tornado.ioloop
+import tornado.web
+from snakeberryJSON import *
+
+class Service:
+    def __init__(self, displayName, baseUrl):
+        self.DisplayName = displayName
+        self.BaseUrl = baseUrl
         
-urls = (
-    '/(.*)', 'hello'
-)
-app = web.application(urls, globals())
-
-class hello:        
-    def GET(self, name):
-        if not name: 
-            name = 'World'
-        t = test()
-        t.wert = "hui"
-        return MyEncoder().encode(t)
-
-class test:
+class Services:
     def __init__(self):
-        self.wert = "Hallo"
+        self.Services = []
+        self.loadServices()
+        
+    def loadServices(self):
+        self.Services.append(Service("Radio","/radio"))
 
-class MyEncoder(JSONEncoder):
-    def default(self, o):
-        return o.__dict__  
+class ListServices(tornado.web.RequestHandler):
+    def get(self):
+        services = Services()
+        self.write(SnakeberryJSON().encode(services))
 
 if __name__ == "__main__":
-    app.run()
+    application = tornado.web.Application([
+        (r"/", ListServices),
+    ])
+    application.listen(8888)
+    tornado.ioloop.IOLoop.instance().start()
+
+
 
