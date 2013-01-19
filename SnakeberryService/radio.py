@@ -1,6 +1,6 @@
 import tornado.web
 from snakeberryJSON import *
-from snakeberry import *
+from common import Message
 from mplayerInterface import *
 
 class Radio:

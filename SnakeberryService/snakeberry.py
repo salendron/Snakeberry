@@ -2,12 +2,7 @@ import tornado.ioloop
 import tornado.web
 from snakeberryJSON import *
 from radio import *
-
-class Message:
-    def __init__(self, errorCode, title, message):
-        self.ErrorCode = errorCode
-        self.Title = title
-        self.Message = message
+from audioSystem import *
 
 class Service:
     def __init__(self, displayName, baseUrl):
@@ -33,6 +28,7 @@ if __name__ == "__main__":
         (r"/radios", ListRadios),
         (r"/radio/play/(.*)", PlayRadio),
         (r"/radio/stop", StopRadio),
+        (r"/volume/(.*)", SetVolume),
     ])
     application.listen(8888)
     tornado.ioloop.IOLoop.instance().start()
