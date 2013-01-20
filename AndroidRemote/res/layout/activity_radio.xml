@@ -28,7 +28,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/lstRadioList"
+        android:id="@+id/lstStationList"
         android:layout_width="match_parent"
         android:layout_height="0sp"
         android:layout_weight="1" >
@@ -36,7 +36,7 @@
 
     <LinearLayout 
 	    android:layout_width="match_parent"
-	    android:layout_height="50sp"
+	    android:layout_height="wrap_content"
 	    android:orientation="vertical">
 
 	    <TextView
@@ -45,10 +45,26 @@
 	        android:text="@string/label_volume"
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
 	
-	    <SeekBar
-	        android:id="@+id/sbRadioVolume"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content" />
+	    <LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    
+	        <Button
+                android:id="@+id/btnVolumeDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-" />
+	        
+	        <Button
+                android:id="@+id/btnVolumeUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+" />
+		    
+	    </LinearLayout>
     
     </LinearLayout>
 
@@ -62,7 +78,7 @@
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
 		    android:orientation="vertical">
-	    
+		    
 		    <TextView
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
@@ -79,7 +95,7 @@
 		</LinearLayout>
 		
 	    <ImageButton
-	        android:id="@+id/imageButton1"
+	        android:id="@+id/btnRadioStop"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:src="@android:drawable/btn_star" />
