@@ -9,5 +9,7 @@
     <string name="title_radio">Radio</string>
     <string name="desc_logo">Logo</string>
     <string name="label_volume">Volume</string>
+    <string name="label_radioNowPlaying">now playing</string>
+    <string name="labal_radioNothingPlaying">...</string>
 
 </resources>

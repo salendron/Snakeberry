@@ -28,7 +28,9 @@ if __name__ == "__main__":
         (r"/radios", ListRadios),
         (r"/radio/play/(.*)", PlayRadio),
         (r"/radio/stop", StopRadio),
-        (r"/volume/(.*)", SetVolume),
+        (r"/radio/nowplaying", RadioNowPlaying),
+        (r"/getvolume", GetVolume),
+        (r"/setvolume/(.*)", SetVolume),
     ])
     application.listen(8888)
     tornado.ioloop.IOLoop.instance().start()
