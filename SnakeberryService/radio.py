@@ -26,6 +26,8 @@ class Radios:
     def loadRadios(self): #TODO load radios from a config file or so and think about some great mechanism to generate ids.
         self.Radios.append(Radio("OE3", "OE3", "mms://apasf.apa.at/OE3_Live_Audio"))
         self.Radios.append(Radio("FM4", "FM4", "http://mp3stream1.apasf.apa.at:8000"))
+        self.Radios.append(Radio("BBC1", "BBC1", "http://bbc.co.uk/radio/listen/live/r1_aaclca.pls"))
+        self.Radios.append(Radio("ATNKTN", "Antenne Kaernten", "http://www.antennestream.at"))
 
 #Webservice requesthandler to recieve list radio stations
 #Author: Bruno Hautzenberger  

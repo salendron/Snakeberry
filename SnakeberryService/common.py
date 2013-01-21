@@ -16,7 +16,7 @@ class Response:
         self.ResponseData = responseData
         
         
-##ERRORCODE
+##ERRORCODES
 errNumOk = 0
 errMsgOk = ""
 
@@ -32,3 +32,6 @@ errMsgRadioStationIdDoesNotExist = "Radio station with given id not found!"
 errNumPlayRadioStationFailed = 4
 
 errNumStopRadioStationFailed = 5
+
+errNumSetVolumeFailed = 6
+errNumGetVolumeFailed = 7
