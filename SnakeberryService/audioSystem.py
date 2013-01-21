@@ -1,6 +1,6 @@
 import tornado.web, subprocess
 from snakeberryJSON import *
-from common import Message
+from common import *
 
 class SetVolume(tornado.web.RequestHandler):
     def get(self,volume):

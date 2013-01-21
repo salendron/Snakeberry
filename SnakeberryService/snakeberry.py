@@ -1,27 +1,18 @@
+## common.py
+## This file is part of Snakeberry by Bruno Hautzenberger (http://the-engine.at)
+## Dual-licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+## and the Beerware (http://en.wikipedia.org/wiki/Beerware) license.
+
 import tornado.ioloop
 import tornado.web
 from snakeberryJSON import *
 from radio import *
 from audioSystem import *
+from services import *
 
-class Service:
-    def __init__(self, displayName, baseUrl):
-        self.DisplayName = displayName
-        self.BaseUrl = baseUrl
-        
-class Services:
-    def __init__(self):
-        self.Services = []
-        self.loadServices()
-        
-    def loadServices(self):
-        self.Services.append(Service("Radio","/radio"))
-
-class ListServices(tornado.web.RequestHandler):
-    def get(self):
-        services = Services()
-        self.write(SnakeberryJSON().encode(services))
-
+#Main loop
+#Generates all service endpoints
+#Author: Bruno Hautzenberger
 if __name__ == "__main__":
     application = tornado.web.Application([
         (r"/", ListServices),
@@ -32,7 +23,7 @@ if __name__ == "__main__":
         (r"/getvolume", GetVolume),
         (r"/setvolume/(.*)", SetVolume),
     ])
-    application.listen(8888)
+    application.listen(8888) #Todo load port from a config file or so
     tornado.ioloop.IOLoop.instance().start()
 
 
