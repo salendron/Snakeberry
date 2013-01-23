@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Snakeberry</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <color name="color_bright">#FFFFFF</color>
+    <color name="color_light_grey">#dedede</color>
+    <color name="color_grey">#a4a4a4</color>
+    <string name="label_searching">searching...</string>
+    <string name="label_refresh">refresh</string>
+
+</resources>
