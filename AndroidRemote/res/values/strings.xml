@@ -9,5 +9,8 @@
     <color name="color_grey">#a4a4a4</color>
     <string name="label_searching">searching...</string>
     <string name="label_refresh">refresh</string>
+    <color name="color_dark">#030303</color>
+    <string name="label_radio">Radio</string>
+    <color name="color_lighter_grey">#eeeeee</color>
 
 </resources>

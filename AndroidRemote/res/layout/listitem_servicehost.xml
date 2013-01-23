@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_listitem_servicehost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5sp"
+    android:background="@color/color_bright">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|left" >
+
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:paddingRight="5sp"
+            android:src="@drawable/ic_launcher" />
+        
+        <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+        
+            <TextView android:id="@+id/tvhostname"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:fontFamily="sans-serif-condensed"
+	            android:textColor="@color/color_grey"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	        <TextView android:id="@+id/tvhostip"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:fontFamily="sans-serif-condensed"
+	            android:textColor="@color/color_light_grey"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|left"
+        android:padding="5sp"
+        android:background="@color/color_lighter_grey"  >
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:paddingRight="5sp"
+            android:src="@drawable/radio" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_radio"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/color_grey"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+    </LinearLayout>
+    
+</LinearLayout>

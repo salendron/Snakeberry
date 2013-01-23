@@ -12,21 +12,27 @@ public final class R {
     }
     public static final class color {
         public static final int color_bright=0x7f050000;
+        public static final int color_dark=0x7f050003;
         public static final int color_grey=0x7f050002;
         public static final int color_light_grey=0x7f050001;
+        public static final int color_lighter_grey=0x7f050004;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int radio=0x7f020001;
     }
     public static final class id {
-        public static final int galHosts=0x7f080000;
         public static final int llSearchingHosts=0x7f080001;
+        public static final int ll_listitem_servicehost=0x7f080003;
         public static final int llrefreshHosts=0x7f080002;
-        public static final int menu_settings=0x7f080003;
+        public static final int lvhosts=0x7f080000;
+        public static final int menu_settings=0x7f080006;
+        public static final int tvhostip=0x7f080005;
+        public static final int tvhostname=0x7f080004;
     }
     public static final class layout {
         public static final int activity_remote_start=0x7f030000;
+        public static final int listitem_servicehost=0x7f030001;
     }
     public static final class menu {
         public static final int activity_remote_start=0x7f070000;
@@ -34,6 +40,7 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
+        public static final int label_radio=0x7f040005;
         public static final int label_refresh=0x7f040004;
         public static final int label_searching=0x7f040003;
         public static final int menu_settings=0x7f040002;

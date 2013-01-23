@@ -28,11 +28,15 @@
         android:layout_height="0sp"
         android:layout_weight="1" 
         android:background="@color/color_light_grey" >
-    
-	    <Gallery 
-	        android:id="@+id/galHosts"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent" />
+
+        <ListView
+            android:id="@+id/lvhosts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10sp"
+            android:dividerHeight="10sp"
+            android:divider="@android:color/transparent" >
+        </ListView>
     
     </LinearLayout>
     
