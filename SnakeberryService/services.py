@@ -4,6 +4,7 @@
 ## and the Beerware (http://en.wikipedia.org/wiki/Beerware) license.
 
 import tornado.web
+from uuid import getnode as get_mac
 from snakeberryJSON import *
 from common import *
 
@@ -38,5 +39,21 @@ class ListServices(tornado.web.RequestHandler):
         except Exception, err:
             errMsg = str(err)
             errNum = errNumListServicesFailed
+            
+        self.write(SnakeberryJSON().encode(Response(errNum, errMsg, rObject)))
+        
+#Returns the Snakeberries Mac Adress
+#Author: Bruno Hautzenberger
+class GetMac(tornado.web.RequestHandler):
+    def get(self):
+        rObject = None
+        errNum = errNumOk
+        errMsg = errMsgOk
+        
+        try:
+            rObject = get_mac()
+        except Exception, err:
+            errMsg = str(err)
+            errNum = errNumGetMacFailed
             
         self.write(SnakeberryJSON().encode(Response(errNum, errMsg, rObject)))

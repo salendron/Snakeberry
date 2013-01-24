@@ -22,6 +22,7 @@ if __name__ == "__main__":
         (r"/radio/nowplaying", RadioNowPlaying),
         (r"/getvolume", GetVolume),
         (r"/setvolume/(.*)", SetVolume),
+        (r"/getmac", GetMac),
     ])
     application.listen(8888) #Todo load port from a config file or so
     tornado.ioloop.IOLoop.instance().start()

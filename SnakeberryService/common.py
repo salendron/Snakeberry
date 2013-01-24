@@ -35,3 +35,5 @@ errNumStopRadioStationFailed = 5
 
 errNumSetVolumeFailed = 6
 errNumGetVolumeFailed = 7
+
+errNumGetMacFailed = 8
