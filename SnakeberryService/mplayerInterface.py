@@ -34,8 +34,11 @@ class Mplayer():
     #Author: Bruno Hautzenberger
     @staticmethod
     def stop():
-        if(Mplayer.currentProcess != None):
-            os.kill(Mplayer.currentProcess.PID, signal.SIGKILL)
+        try:
+            if(Mplayer.currentProcess != None):
+                os.kill(Mplayer.currentProcess.PID, signal.SIGKILL)
+                Mplayer.currentProcess = None
+        except:
             Mplayer.currentProcess = None
     
     

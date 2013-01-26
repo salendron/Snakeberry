@@ -56,16 +56,18 @@ class PlayRadio(tornado.web.RequestHandler):
         
         try:
             streamUrl = None
+            description = None
             for radio in Radios().Radios:
                 if(radio.RadioId == radioId):
                     streamUrl = radio.StreamUrl
+                    description = radio.DisplayName
                     break
                 
             if(streamUrl == None):
                 errNum = errNumRadioStationIdDoesNotExist
                 errMsg = errMsgRadioStationIdDoesNotExist
             else:
-                mplayer = MplayerProcess("Radio", radioId, streamUrl)
+                mplayer = MplayerProcess("Radio", description, streamUrl)
                 Mplayer.play(mplayer)
         except Exception, err:
             errMsg = str(err)
