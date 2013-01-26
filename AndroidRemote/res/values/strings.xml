@@ -4,13 +4,22 @@
     <string name="app_name">Snakeberry</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+
     <color name="color_bright">#FFFFFF</color>
-    <color name="color_light_grey">#dedede</color>
+    <color name="color_light_grey">#dddddd</color>
     <color name="color_grey">#a4a4a4</color>
+
     <string name="label_searching">searching...</string>
     <string name="label_refresh">refresh</string>
+
     <color name="color_dark">#030303</color>
+
     <string name="label_radio">Radio</string>
+
     <color name="color_lighter_grey">#eeeeee</color>
+
+    <string name="title_activity_radio">Radio</string>
+    <string name="label_volume">Volume</string>
+    <string name="label_stop">Stop</string>
 
 </resources>

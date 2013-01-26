@@ -6,22 +6,23 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import at.theengine.android.snakeberry.Listeners.OnServiceHostFinderFoundHostListener;
 import at.theengine.android.snakeberry.animation.AnimationFactory;
 import at.theengine.android.snakeberry.dataobjects.ServiceHost;
 import at.theengine.android.snakeberry.net.ServiceHostFinder;
-import at.theengine.android.snakeberry.net.onServiceHostFinderFoundHostListener;
+import at.theengine.android.snakeberryremote.R;
 
-@SuppressWarnings("deprecation")
 public class RemoteStart extends Activity {
 	
 	public static String TAG = "Snakeberry";
@@ -29,6 +30,11 @@ public class RemoteStart extends Activity {
 	private Context mContext;
 	private ServiceHostFinder mFinder;
 	private ArrayList<ServiceHost> mHosts;
+	
+	private static ServiceHost _SelectedHost;
+	public static ServiceHost getHost(){
+		return _SelectedHost;
+	}
 	
 	//controlls
 	private LinearLayout mLlSearchingHosts;
@@ -64,10 +70,21 @@ public class RemoteStart extends Activity {
 				findServiceHosts();
 			}
 		});
+		
+		mLvHosts.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				_SelectedHost = mHosts.get(arg2);
+				Intent radio = new Intent(); 
+				radio.setClass(mContext, Radio.class); 
+				startActivity(radio);
+			}
+		});
 	}
 	
 	private void initializeHostFinder(){
-		onServiceHostFinderFoundHostListener serviceHostListener = new onServiceHostFinderFoundHostListener() {
+		OnServiceHostFinderFoundHostListener serviceHostListener = new OnServiceHostFinderFoundHostListener() {
 			
 			@Override
 			public void onHostFound(ServiceHost host) {

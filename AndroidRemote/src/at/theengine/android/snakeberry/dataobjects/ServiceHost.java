@@ -7,13 +7,15 @@ public class ServiceHost {
 	private String mIp;
 	private String mHostName;
 	private String mDisplayName;
+	private String mMac;
 	private ArrayList<Service> mServices;
 	
-	public ServiceHost(String ip, String hostName, String displayName) {
+	public ServiceHost(String ip, String hostName, String displayName, String mac) {
 		super();
 		this.mIp = ip;
 		this.mHostName = hostName;
 		this.mDisplayName = displayName;
+		this.mMac = mac;
 		
 		this.mServices = new ArrayList<Service>();
 	}
@@ -52,5 +54,13 @@ public class ServiceHost {
 	
 	public void setDisplayName(String displayName) {
 		this.mDisplayName = displayName;
+	}
+	
+	public String getMac() {
+		return mMac;
+	}
+	
+	public void setMac(String mac) {
+		this.mMac = mac;
 	}
 }

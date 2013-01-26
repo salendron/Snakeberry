@@ -13,6 +13,7 @@ import android.annotation.TargetApi;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
+import at.theengine.android.snakeberry.Listeners.OnServiceHostFinderFoundHostListener;
 import at.theengine.android.snakeberry.dataobjects.Service;
 import at.theengine.android.snakeberry.dataobjects.ServiceHost;
 import at.theengine.android.snakeberry.dataobjects.SnakeberryException;
@@ -21,10 +22,10 @@ import at.theengine.android.snakeberryremote.RemoteStart;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class ServiceHostFinder {
 	
-	private onServiceHostFinderFoundHostListener mListener;
+	private OnServiceHostFinderFoundHostListener mListener;
 	private int mSearchCount;
 	
-	public void setOnServiceHostFinderFoundHostListener(onServiceHostFinderFoundHostListener listener){
+	public void setOnServiceHostFinderFoundHostListener(OnServiceHostFinderFoundHostListener listener){
 		this.mListener = listener;
 	}
 	
@@ -116,7 +117,7 @@ public class ServiceHostFinder {
 			JSONObject response = Utils.handleServiceResponse(rawResponse);
 			
 			//create new host
-			ServiceHost host = new ServiceHost(ip, hostname, hostname); //to try to override host name from DB or so...
+			ServiceHost host = new ServiceHost(ip, hostname, hostname, ""); //to try to override host name from DB or so...
 			
 			//build service list
 			JSONArray services = (JSONArray) ((JSONObject) response.get("ResponseData")).get("Services");
@@ -125,6 +126,11 @@ public class ServiceHostFinder {
 				service = (JSONObject) services.get(i);
 				host.addService(new Service(service.getString("DisplayName"), service.getString("BaseUrl")));
 			}
+			
+			//getMac
+			rawResponse = Utils.getStringResponseFromGetRequest("http://" + ip + ":" + Utils.SNAKEBERRY_PORT + "/getmac");
+			response = Utils.handleServiceResponse(rawResponse);
+			host.setMac(response.getString("ResponseData"));
 			
 			return host;
 		} catch (IOException e) {

@@ -19,23 +19,38 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int radio=0x7f020001;
+        public static final int pause=0x7f020001;
+        public static final int play=0x7f020002;
+        public static final int radio=0x7f020003;
+        public static final int slider=0x7f020004;
+        public static final int stop=0x7f020005;
     }
     public static final class id {
-        public static final int llSearchingHosts=0x7f080001;
-        public static final int ll_listitem_servicehost=0x7f080003;
-        public static final int llrefreshHosts=0x7f080002;
-        public static final int lvhosts=0x7f080000;
-        public static final int menu_settings=0x7f080006;
-        public static final int tvhostip=0x7f080005;
-        public static final int tvhostname=0x7f080004;
+        public static final int btnStop=0x7f080003;
+        public static final int llSearchingHosts=0x7f080007;
+        public static final int ll_listitem_radioStation=0x7f080009;
+        public static final int ll_listitem_servicehost=0x7f08000b;
+        public static final int llrefreshHosts=0x7f080008;
+        public static final int lvStations=0x7f080004;
+        public static final int lvhosts=0x7f080006;
+        public static final int menu_settings=0x7f08000e;
+        public static final int tvNowPlayingDescription=0x7f080002;
+        public static final int tvNowPlayingType=0x7f080001;
+        public static final int tvRadio=0x7f080000;
+        public static final int tvRadioStationName=0x7f08000a;
+        public static final int tvhostip=0x7f08000d;
+        public static final int tvhostname=0x7f08000c;
+        public static final int vsVolume=0x7f080005;
     }
     public static final class layout {
-        public static final int activity_remote_start=0x7f030000;
-        public static final int listitem_servicehost=0x7f030001;
+        public static final int activity_radio=0x7f030000;
+        public static final int activity_remote_start=0x7f030001;
+        public static final int listitem_radiostation=0x7f030002;
+        public static final int listitem_servicehost=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_remote_start=0x7f070000;
+        public static final int activity_radio2=0x7f070000;
+        public static final int activity_remote_start=0x7f070001;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
@@ -43,7 +58,10 @@ public final class R {
         public static final int label_radio=0x7f040005;
         public static final int label_refresh=0x7f040004;
         public static final int label_searching=0x7f040003;
+        public static final int label_stop=0x7f040008;
+        public static final int label_volume=0x7f040007;
         public static final int menu_settings=0x7f040002;
+        public static final int title_activity_radio=0x7f040006;
     }
     public static final class style {
         /** 
@@ -69,7 +87,6 @@ public final class R {
          */
         public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
     }

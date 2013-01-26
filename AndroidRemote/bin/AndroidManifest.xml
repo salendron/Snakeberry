@@ -7,7 +7,8 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +23,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Radio"
+            android:label="@string/title_activity_radio"
+            android:parentActivityName="at.theengine.android.snakeberryremote.RemoteStart" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.theengine.android.snakeberryremote.RemoteStart" />
         </activity>
     </application>
 
