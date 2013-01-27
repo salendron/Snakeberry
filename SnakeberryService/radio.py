@@ -3,7 +3,7 @@
 ## Dual-licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
 ## and the Beerware (http://en.wikipedia.org/wiki/Beerware) license.
 
-import tornado.web
+import tornado.web, csv
 from snakeberryJSON import *
 from common import *
 from mplayerInterface import *
@@ -23,11 +23,14 @@ class Radios:
         self.Radios = []
         self.loadRadios()
         
-    def loadRadios(self): #TODO load radios from a config file or so and think about some great mechanism to generate ids.
-        self.Radios.append(Radio("OE3", "OE3", "mms://apasf.apa.at/OE3_Live_Audio"))
-        self.Radios.append(Radio("FM4", "FM4", "http://mp3stream1.apasf.apa.at:8000"))
-        self.Radios.append(Radio("BBC1", "BBC1", "http://bbc.co.uk/radio/listen/live/r1_aaclca.pls"))
-        self.Radios.append(Radio("ATNKTN", "Antenne Kaernten", "http://www.antennestream.at"))
+    def loadRadios(self): 
+        with open('/home/pi/snakeberry/radio.csv', 'rb') as csvfile:
+            radioreader = csv.reader(csvfile, delimiter=';', quotechar='\"')
+            
+            count = 0
+            for row in radioreader:
+                self.Radios.append(Radio(str(count), row[0], row[1]))
+                count = count + 1
 
 #Webservice requesthandler to recieve list radio stations
 #Author: Bruno Hautzenberger  

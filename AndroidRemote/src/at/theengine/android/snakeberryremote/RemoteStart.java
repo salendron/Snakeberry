@@ -53,7 +53,7 @@ public class RemoteStart extends Activity {
 		initViews();
 		
 		//search for Snakeberries
-		findServiceHosts();
+		findServiceHosts();		
 	}
 	
 	private void initViews(){
