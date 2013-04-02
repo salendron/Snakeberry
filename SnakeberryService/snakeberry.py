@@ -9,12 +9,16 @@ from snakeberryJSON import *
 from radio import *
 from audioSystem import *
 from services import *
+from client import *
+
+static_path = os.path.join(os.path.dirname(__file__), 'static')
 
 #Main loop
 #Generates all service endpoints
 #Author: Bruno Hautzenberger
 if __name__ == "__main__":
     application = tornado.web.Application([
+        (r"/(.*\.(html|css|js|png|ico))", tornado.web.StaticFileHandler, {'path': static_path}),
         (r"/", ListServices),
         (r"/radios", ListRadios),
         (r"/radio/play/(.*)", PlayRadio),
