@@ -9,7 +9,6 @@ from snakeberryJSON import *
 from radio import *
 from audioSystem import *
 from services import *
-from client import *
 
 static_path = os.path.join(os.path.dirname(__file__), 'static')
 
