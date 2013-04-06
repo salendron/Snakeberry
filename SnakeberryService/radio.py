@@ -51,6 +51,7 @@ class ListRadios(tornado.web.RequestHandler):
             errNum = errNumListRadioStationsFailed
 
         self.write(SnakeberryJSON().encode(Response(errNum, errMsg, rObject)))
+        self.set_header('Content-Type','application/json')
 
 #Webservice requesthandler to play radio station with given id
 #Author: Bruno Hautzenberger
@@ -80,6 +81,7 @@ class PlayRadio(tornado.web.RequestHandler):
             errNum = errNumPlayRadioStationFailed
 
         self.write(SnakeberryJSON().encode(Response(errNum, errMsg, rObject)))
+        self.set_header('Content-Type','application/json')
 
 #Webservice requesthandler to stop radio
 #Author: Bruno Hautzenberger
@@ -96,6 +98,7 @@ class StopRadio(tornado.web.RequestHandler):
             errNum = errNumStopRadioStationFailed
 
         self.write(SnakeberryJSON().encode(Response(errNum, errMsg, rObject)))
+        self.set_header('Content-Type','application/json')
 
 #Webservice requesthandler to recieve what information about what the radio is playing
 #Author: Bruno Hautzenberger
@@ -114,3 +117,4 @@ class RadioNowPlaying(tornado.web.RequestHandler):
             errNum = errNumStopRadioStationFailed
 
         self.write(SnakeberryJSON().encode(Response(errNum, errMsg, rObject)))
+        self.set_header('Content-Type','application/json')
