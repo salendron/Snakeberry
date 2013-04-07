@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Snakeberry Radio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="snakeberry.js" type="application/javascript"></script>
+    <style type="text/css">
+.row-fluid {
+    text-align: center;
+}
+.nav-list li {
+    line-height: 2em;
+}
+    </style>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../snakeberry.pyassets/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="slider.css" rel="stylesheet">
+    <script src="bootstrap-slider.js"></script>
+  </head>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+        <h1>Snakeberry Radio</h1>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <input type="text" class="span10 slider" 
+      style="display:none" 
+      value="0"
+      data-slider-min="-10239" data-slider-max="400" data-slider-step="1" data-slider-value="0"
+      data-slider-selection="after">
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8 well">
+        <ul class="nav nav-list" id="radiosList">
+           <li><a href="#radio-1">List of radio statiosns will be loaded</a></li>
+        </ul>
+    </div>
+    <div class="span2"></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+        <p>non-functional beta version</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <hr class="soften" />
+    <p class="text-center">
+     <a href="https://github.com/salendron/Snakeberry">Snakeberry@GitHub</a>
+    </p>
+  </div>
+</footer>
+<script>
+$(function() {
+    var slider = $('.slider').slider();
+    var client = new SnakeberryClient({
+        baseURL: "",
+        radiosList: '#radiosList',
+        volumeControl: '.slider'
+    });
+});
+</script>
+</body>
+</html>
